@@ -6,8 +6,6 @@ This document describes the Cubits REST API and everything that is necessary to 
 1. [Introduction](introduction)
 1. [Request and Response Format](request_response)
 1. [Authentication](authentication)
-1. [Callback](callback)
-1. [Language selection](language_selection)
 1. Resources
     * [Test](api-v1/test)
     * [Invoices](api-v1/invoices)
@@ -20,4 +18,8 @@ This document describes the Cubits REST API and everything that is necessary to 
     * [Buysend](api-v1/buysend)
     * [Sell](api-v1/sell)
     * [Prices](api-v1/prices)
+1. [Callback](callback)
+1. [Language selection](language_selection)
 1. [Appendices](appendices)
+    * [Supported FIAT currencies](appendices#supported_fiat_currencies)
+    * [Supported cryptocurrencies](appendices#supported_cryptocurrencies)

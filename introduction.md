@@ -3,7 +3,7 @@ layout: default
 permalink: /introduction/
 title: Introduction
 ---
-This document describes the Cubits REST API and everything that is necessary to access its resources. In order to use the API, you first need to have a verified Cubits merchant account. If you did not receive your credentials yet, please sign up and verify your merchant account at [Cubits](https://cubits.com/merchant) or contact [support@cubits.com](mailto:support@cubits.com).
+This document describes the Cubits REST API and everything that is necessary to access its resources. In order to use the API, you first need to have a verified Cubits merchant account.
 
 ## Configuration
 

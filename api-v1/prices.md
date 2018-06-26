@@ -7,7 +7,7 @@ The following endpoints provide current bid, ask and mid prices for the [support
 
 ## GET /api/v1/prices/{currency_base}
 
-Lists the fiat prices for the specified cryptocurrency(`currency_base` parameter).
+Lists the fiat prices for the specified cryptocurrency (`currency_base` parameter).
 
 ### Request
 
@@ -82,7 +82,7 @@ Content-Type: application/vnd.api+json
 
 ## GET /api/v1/prices/{currency_base}/{currency_quote}
 
-Get the price of the specified cryptocurrency(`currency_base` parameter) in the specified fiat currency(`currency_quote` parameter).
+Get the price of the specified cryptocurrency (`currency_base` parameter) in the specified fiat currency (`currency_quote` parameter).
 
 ### Request
 
@@ -128,5 +128,31 @@ Content-Type: application/vnd.api+json
   "bid": "8100.57",
   "ask": "8185.67",
   "mid": "8143.12"
+}
+```
+
+
+Request to get BCH price in USD:
+
+Request:
+```
+GET /api/v1/prices/BCH/USD HTTP/1.1
+Content-Type: application/vnd.api+json
+Accept: application/vnd.api+json
+X-Cubits-Key: *****
+X-Cubits-Nonce: *****
+X-Cubits-Signature: *****
+```
+
+Response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/vnd.api+json
+
+{
+  "currency": "USD",
+  "bid": "1312.31",
+  "ask": "1384.11",
+  "mid": "1348.21"
 }
 ```
