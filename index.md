@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 ---
 This document describes the Cubits REST API and everything that is necessary to access its resources.
 
