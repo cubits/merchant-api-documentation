@@ -13,7 +13,7 @@ Attribute   | Data type   | Description
 ------------|-------------|--------------
 amount      | string(32)  | Amount of cryptocurrency to be sent, decimal number as a string (e.g. "0.12500000")
 address     | string(64)  | Address the amount is to be sent to
-currency    | string(3)   | *(optional)* A code of cryptocurrency to be sent (see [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies), default: `BTC`)
+currency    | string(3)   | *(optional)* A code of cryptocurrency to be sent (see [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies), default: `BTC`)
 reference   | string(512) | *(optional)* Individual free-text field stored in the tx as-is
 
 ### Response
@@ -26,7 +26,7 @@ tx_ref_code | string(32)  | Reference code of the created transaction
 
 ### Errors
 
-On error, the API responds with standard [error responses](/request_response/#error_responses) and with some specific to this request:
+On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses) and with some specific to this request:
 
 
 #### Client errors (4xx)

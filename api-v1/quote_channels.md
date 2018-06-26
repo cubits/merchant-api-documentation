@@ -49,7 +49,7 @@ default   | bool       | Whether this address is the default address format, i.e
 
 ### Errors
 
-On error, the API responds with standard [error responses](/request_response/#error_responses).
+On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
 
 ### Example
 
@@ -156,7 +156,7 @@ amount_plus_fees | string(17)  | Amount that was received, without fees deducted
 
 ### Errors
 
-On error, the API responds with standard [error responses](/request_response/#error_responses).
+On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
 
 ### Example
 
@@ -263,7 +263,7 @@ amount_plus_fees | string(17)  | Amount that was received, without fees deducted
 
 ### Errors
 
-On error, the API responds with standard [error responses](/request_response/#error_responses).
+On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
 
 ### Example
 
@@ -310,8 +310,8 @@ Creates a new quote channel.
 
 Attribute   | Data type   | Description
 ------------|-------------|--------------
-sender_currency | string(3)   | *(optional)* Code of the cryptocurrency accepted by the quote channel (see [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
-receiver_currency | string(3) | Code of the currency that you want to receive (see [List of supported currencies](/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
+sender_currency | string(3)   | *(optional)* Code of the cryptocurrency accepted by the quote channel (see [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
+receiver_currency | string(3) | Code of the currency that you want to receive (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
 receiver_amount | string(16)  | Amount of currency that should be received (used to calculate the quote) as a decimal floating point number, converted to string (e.g. "123.05")
 name        | string(256) | *(optional)* Name of the quote channel
 description | string(512) | *(optional)* Description of the quote channel
@@ -349,7 +349,7 @@ valid_until | number      | (float) Unix-epoch timestamp after which the quote w
 
 ### Errors
 
-On error, the API responds with standard [error responses](/request_response/#error_responses) and with one specific to this request:
+On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses) and with one specific to this request:
 
 #### Client errors (4xx)
 
@@ -469,7 +469,7 @@ default   | bool       | Whether this address is the default address format, i.e
 
 ### Errors
 
-On error, the API responds with standard [error responses](/request_response/#error_responses).
+On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
 
 ### Example
 
@@ -526,6 +526,6 @@ When specifying a `callback_url`, the server will send callbacks to inform you a
 
 When specifying a `txs_callback_url`, the server will send callbacks to inform you about changes to any of the quote channel's transactions. The POSTed request body will correspond to the result of a GET request to /api/v1/quote_channels/{channel_id}/txs/{tx_ref_code}.
 
-See [Callbacks](/callback/) for a general description of the Cubits callback mechanism and format.
+See [Callbacks](/merchant-api-documentation/callback/) for a general description of the Cubits callback mechanism and format.
 
 Usually we will send a callback within a few seconds of a Blockchain transaction being propagated on the cryptocurrency network even though it is not yet confirmed and you will see those transactions as `pending`.
