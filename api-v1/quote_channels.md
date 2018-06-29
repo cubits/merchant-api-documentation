@@ -3,9 +3,7 @@ layout: default
 permalink: /api-v1/quote_channels/
 title: Quote Channels
 ---
-Quote channels provide a method to receive and potentially convert cryptocurrency payments of variable amounts just as with regular channels. The difference is that quote channels have a fixed exchange rate that is used for the cryptocurrency conversion within the validity time of the quote but at the same time still convert incoming funds to the requested *receiver_currency* at the spot price if they are paid after the validity time.
-Quote channels have to be created for a certain expected amount in any of the supported fiat currencies. They have a fixed payment address, described by potentially several address formats, and support callbacks. Cryptocurrency payments for less than the smallest possible unit for the chosen fiat currency will not be converted but transferred as-is to the Cubits Wallet.
-Quote channels also provide a way of tracking individual payments made to them. A list of transactions is recorded with each quote channel and returned upon querying its transaction endpoint as well as with each transaction callback.
+Like regular channels, quote channels allow you to receive and convert cryptocurrency payments. The difference is that quote channels have a fixed exchange rate that is used when converting the cryptocurrency to fiat currency within the validity time of the quote. Incoming funds will be converted to the requested fiat currency at the spot price if they are received after the validity time. Quote channels have to be created for an expected amount in any of the supported fiat currencies. They have a fixed payment address, potentially described by several address formats, and support callbacks. Cryptocurrency payments that amount to less than the smallest possible unit for the chosen fiat currency will not be converted. Instead, they will be transferred to your Cubits cryptocurrency wallet. You are also able to view a quote channel’s list of recorded transactions to track individual payments.
 
 ## GET /api/v1/quote_channels/{channel_id}
 
