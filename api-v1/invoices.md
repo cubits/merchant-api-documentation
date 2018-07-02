@@ -135,7 +135,7 @@ Attribute   | Data type   | Description
 currency    | string(3)   | Code of the currency that you want to receive (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
 price       | string(16)  | Price of the invoice that the merchant wants to receive, as a decimal floating point number, converted to string (e.g. "123.05")
 invoice_currency  | string(3)   | *(optional)* Code of the cryptocurrency that the customer will be requested to pay (see [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies), default: `BTC`)
-share_to_keep_in_btc        | number | *(optional)* Percentage of the invoice amount to receive in `invoice_currency`, as an integer number from 0 to 100. If not specified, a default value is used from the Cubits Pay / Payouts / Percentage Kept in BTC
+share_to_keep_in_btc        | number | *(optional)* Percentage of the invoice total to receive in `invoice_currency`, as an integer number from 0 to 100. If not specified, a default value is used from the Cubits Pay / Payouts / Percentage Kept in BTC
 name        | string(256) | *(optional)* Name of the item displayed to the customer
 description | string(512) | *(optional)* Description of the item displayed to the customer
 reference   | string(512) | *(optional)* Individual free-text field stored in the invoice as-is
@@ -167,7 +167,7 @@ paid_currency     | string(3)   | Code of the currency that was paid by the cust
 paid_amount       | string(16)  | Amount of currency that was paid by the customer
 pending_currency     | string(3)   | Code of the pending amount currency
 pending_amount       | string(16)  | Total amount of the unconfirmed incoming payments that were sent by the customer
-share_to_keep_in_btc | number | Percentage of the invoice amount to receive in `invoice_currency`, as an integer number from 0 to 100
+share_to_keep_in_btc | number | Percentage of the invoice total to receive in `invoice_currency`, as an integer number from 0 to 100
 name        | string(256) | Name of the item displayed to the customer
 description | string(512) | Description of the item displayed to the customer
 reference   | string(512) | Individual free-text field stored in the invoice as-is
