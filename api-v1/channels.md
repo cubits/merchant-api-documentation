@@ -3,7 +3,7 @@ layout: default
 permalink: /api-v1/channels/
 title: Channels
 ---
-Cubits channels are a way to receive and potentially convert crypto payments of variable amounts and without a validity period being set. Cryptocurrency sent to a channel can be automatically converted to any of the supported fiat currencies at the spot rate at the time of the payment. Channels have a fixed payment address and support callbacks. A payment screen is also available to provide a convenient way to pay to this address to users. In case a channel is created with a fiat conversion, payments for less than the smallest possible unit for that fiat currency will not be converted but transferred as-is to the Cubits Wallet. Channels also provide a way of tracking individual payments made to them. A list of transactions is recorded with each channel and returned upon querying a channels transactions as well as with each callback. Possible use cases for Cubits channels are accepting donations on a website or just keeping track of payments to a certain address.
+Cubits channels allow you to receive and convert cryptocurrency payments without setting a validity period. Cryptocurrency sent to a channel can be automatically exchanged into any of Cubits’ supported fiat currencies at the spot rate at the time of the payment. Channels have a fixed payment address and support callbacks. A payment screen can also be generated so users are able to conveniently send funds to your address. Cryptocurrency payments that amount to less than the smallest possible unit for the chosen fiat currency will not be converted. Instead, they will be transferred to your Cubits cryptocurrency wallet. You are also able to view a channel’s list of recorded transactions to track individual payments. Possible use cases for Cubits channels are accepting donations on a website or simply keeping track of payments to a particular address.
 
 ## GET /api/v1/channels/{channel_id}
 
@@ -31,7 +31,7 @@ channel_url | string(512) | Unique URL of the channel payment screen on Cubits
 callback_url| string(512) | URL that is called on channel updates
 txs_callback_url| string(512) | URL that is called on channel transaction updates
 success_url | string(512) | URL to redirect the user to after a successful payment
-share_to_keep_in_btc | number | Percent of the each transaction to be kept in `sender_currency`, as a number from 0 to 100.
+share_to_keep_in_btc | number | Percentage of the each transaction to receive in `sender_currency`, as a number from 0 to 100.
 created_at  | number      | (float) Unix-epoch timestamp of the channel creation
 updated_at  | number      | (float) Unix-epoch timestamp when the channel data was last updated
 
@@ -328,7 +328,7 @@ reference   | string(512) | *(optional)* Individual free-text field stored in th
 callback_url| string(512) | *(optional)* URL that is called on channel status updates
 txs_callback_url| string(512) | *(optional)* URL that is called on channel transaction updates
 success_url | string(512) | *(optional)* URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | *(optional)* Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. `20`).
+share_to_keep_in_btc | string(16) | *(optional)* Percentage of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. `20`).
 
 Note that conversion between cryptocurrencies aren't supported yet, meaning if `receiver_currency` is set to `BCH`, `sender_currency` **must** also be explicitly set to `BCH`.
 
@@ -350,7 +350,7 @@ channel_url | string(512) | Unique URL of the channel payment screen on Cubits
 callback_url| string(512) | URL that is called on channel status updates
 txs_callback_url| string(512) | URL that is called on channel transaction updates
 success_url | string(512) | URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. `20`).
+share_to_keep_in_btc | string(16) | Percentage of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. `20`).
 created_at  | number      | (float) Unix-epoch timestamp of the channel creation
 updated_at  | number      | (float) Unix-epoch timestamp when the channel data was last updated
 
@@ -445,7 +445,7 @@ reference   | string(512) | *(optional)* New free-text field stored in the chann
 callback_url| string(512) | *(optional)* New URL that is called on channel status updates
 txs_callback_url| string(512) | *(optional)* URL that is called on channel transaction updates
 success_url | string(512) | *(optional)* New URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | *(optional)* Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. "20")
+share_to_keep_in_btc | string(16) | *(optional)* Percent of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. "20")
 
 ### Response
 
@@ -464,7 +464,7 @@ channel_url | string(512) | Unique URL of the channel payment screen on Cubits
 callback_url| string(512) | URL that is called on channel status updates
 txs_callback_url| string(512) | URL that is called on channel transaction updates
 success_url | string(512) | URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. "20")
+share_to_keep_in_btc | string(16) | Percent of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. "20")
 created_at  | number      | (float) Unix-epoch timestamp of the channel creation
 updated_at  | number      | (float) Unix-epoch timestamp when the channel data was last updated
 

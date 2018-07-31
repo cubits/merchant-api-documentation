@@ -3,11 +3,9 @@ layout: default
 permalink: /api-v1/invoices/
 title: Invoices
 ---
-Cubits invoices are a convenient way to accept cryptocurrency payments using Cubits. An invoice is created specifying a certain amount and a currency you want to receive. This currency can be any of the supported fiat or crypto currencies. You may also specify the cryptocurrency accepted by the invoice(default is BTC). In any case, a quote is created and the price in a cryptocurrency is calculated. Each invoice has a unique cryptoaddress and a payment screen URL with a QR code and additional features that can be used to show to a customer. The Cubits payment screen also supports logging in to a Cubits account directly to facilitate single-click payments for Cubits users. Each invoice has a limited validity period (for fiat invoices: 15 minutes) during which they can be paid and the (optional) conversion to fiat will be performed. Crypto payments arriving after the validity period will be treated as regular deposits.
+Cubits invoices are a convenient way to accept cryptocurrency payments. An invoice is created by specifying a certain amount and currency you want to receive. You can choose any of Cubits’ supported crypto or fiat currencies. A quote is created and the price in cryptocurrency is calculated. Each invoice has a unique payment address and a payment screen URL with a QR code. The Cubits payment screen also supports directly logging in to a Cubits account to facilitate single-click payments for Cubits users. Each invoice has a limited validity period (15 minutes for fiat currency invoices) during which they can be paid and the (optional) conversion to fiat will be performed. Cryptocurrency payments received after the validity period will be treated as regular deposits.
 
-Our system operates with two types of invoices: refundable and non-refundable. Non-refundable invoices always deposit any funds that are left after conversion. This includes underpaid unsuccessful invoices as well as overpaid amounts. Refundable invoices are different in a way that such excess funds are claimable by customer who received invoice link.
-
-Since version 1.8 of API, newly created merchant accounts will have invoices refundable by default. If your account was created before and you wish to have switch refundable invoices, please contact your account manager.
+Cubits operates with two types of invoices: refundable and non-refundable. Non-refundable invoices deposit any funds that are left after conversion. This includes underpaid, unsuccessful invoices as well as overpaid amounts. Refundable invoices enable the customer who received the invoice link to claim excess funds. Since version 1.8 of our API, newly created merchant accounts will have invoices refundable by default. If your account was created before and you wish to have refundable invoices, please contact your account manager.
 
 ## Invoice status
 
@@ -137,7 +135,7 @@ Attribute   | Data type   | Description
 currency    | string(3)   | Code of the currency that you want to receive (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
 price       | string(16)  | Price of the invoice that the merchant wants to receive, as a decimal floating point number, converted to string (e.g. "123.05")
 invoice_currency  | string(3)   | *(optional)* Code of the cryptocurrency that the customer will be requested to pay (see [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies), default: `BTC`)
-share_to_keep_in_btc        | number | *(optional)* Percentage of the invoice amount to be kept in BTC, as an integer number from 0 to 100. If not specified, a default value is used from the Cubits Pay / Payouts / Percentage Kept in BTC
+share_to_keep_in_btc        | number | *(optional)* Percentage of the invoice total to receive in `invoice_currency`, as an integer number from 0 to 100. If not specified, a default value is used from the Cubits Pay / Payouts / Percentage Kept in BTC
 name        | string(256) | *(optional)* Name of the item displayed to the customer
 description | string(512) | *(optional)* Description of the item displayed to the customer
 reference   | string(512) | *(optional)* Individual free-text field stored in the invoice as-is
@@ -169,7 +167,7 @@ paid_currency     | string(3)   | Code of the currency that was paid by the cust
 paid_amount       | string(16)  | Amount of currency that was paid by the customer
 pending_currency     | string(3)   | Code of the pending amount currency
 pending_amount       | string(16)  | Total amount of the unconfirmed incoming payments that were sent by the customer
-share_to_keep_in_btc | number | Percentage of the invoice amount to be kept in BTC, as an integer number from 0 to 100
+share_to_keep_in_btc | number | Percentage of the invoice total to receive in `invoice_currency`, as an integer number from 0 to 100
 name        | string(256) | Name of the item displayed to the customer
 description | string(512) | Description of the item displayed to the customer
 reference   | string(512) | Individual free-text field stored in the invoice as-is

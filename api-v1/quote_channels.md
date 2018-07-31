@@ -3,9 +3,7 @@ layout: default
 permalink: /api-v1/quote_channels/
 title: Quote Channels
 ---
-Quote channels provide a method to receive and potentially convert cryptocurrency payments of variable amounts just as with regular channels. The difference is that quote channels have a fixed exchange rate that is used for the cryptocurrency conversion within the validity time of the quote but at the same time still convert incoming funds to the requested *receiver_currency* at the spot price if they are paid after the validity time.
-Quote channels have to be created for a certain expected amount in any of the supported fiat currencies. They have a fixed payment address, described by potentially several address formats, and support callbacks. Cryptocurrency payments for less than the smallest possible unit for the chosen fiat currency will not be converted but transferred as-is to the Cubits Wallet.
-Quote channels also provide a way of tracking individual payments made to them. A list of transactions is recorded with each quote channel and returned upon querying its transaction endpoint as well as with each transaction callback.
+Like regular channels, quote channels allow you to receive and convert cryptocurrency payments. The difference is that quote channels have a fixed exchange rate that is used when converting the cryptocurrency to fiat currency within the validity time of the quote. Incoming funds will be converted to the requested fiat currency at the spot price if they are received after the validity time. Quote channels have to be created for an expected amount in any of the supported fiat currencies. They have a fixed payment address, potentially described by several address formats, and support callbacks. Cryptocurrency payments that amount to less than the smallest possible unit for the chosen fiat currency will not be converted. Instead, they will be transferred to your Cubits cryptocurrency wallet. You are also able to view a quote channel’s list of recorded transactions to track individual payments.
 
 ## GET /api/v1/quote_channels/{channel_id}
 
@@ -34,7 +32,7 @@ reference   | string(512) | Individual free-text field stored in the quote chann
 callback_url| string(512) | URL that is called on quote channel updates
 txs_callback_url| string(512) | URL that is called on quote channel transaction updates
 success_url | string(512) | URL to redirect the user to after a successful payment
-share_to_keep_in_btc | number | Percent of the each transaction to be kept in `sender_currency`, as a number from 0 to 100
+share_to_keep_in_btc | number | Percentage of the each transaction to receive in `sender_currency`, as a number from 0 to 100
 created_at  | number      | (float) Unix-epoch timestamp of the quote channel creation
 updated_at  | number      | (float) Unix-epoch timestamp when the quote channel data was last updated
 valid_until | number | (float) Unix-epoch timestamp after which the quote will expire
@@ -319,7 +317,7 @@ reference   | string(512) | *(optional)* Individual free-text field stored in th
 callback_url| string(512) | *(optional)* URL that is called on quote channel status updates
 txs_callback_url| string(512) | *(optional)* URL that is called on quote channel transaction updates
 success_url | string(512) | *(optional)* URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | *(optional)* Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. "20")
+share_to_keep_in_btc | string(16) | *(optional)* Percentage of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. "20")
 
 Note that conversion between cryptocurrencies aren't supported yet, meaning if `receiver_currency` is set to `BCH`, `sender_currency` **must** also be explicitly set to `BCH`.
 
@@ -342,7 +340,7 @@ reference   | string(512) | Individual free-text field stored in the quote chann
 callback_url| string(512) | URL that is called on quote channel status updates
 txs_callback_url| string(512) | URL that is called on quote channel transaction updates
 success_url | string(512) | URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. "20")
+share_to_keep_in_btc | string(16) | Percentage of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. "20")
 created_at  | number      | (float) Unix-epoch timestamp of the quote channel creation
 updated_at  | number      | (float) Unix-epoch timestamp when the quote channel data was last updated
 valid_until | number      | (float) Unix-epoch timestamp after which the quote will expire
@@ -433,7 +431,7 @@ name        | string(256) | *(optional)* New name of the quote channel
 callback_url| string(512) | *(optional)* New URL that is called on quote channel status updates
 txs_callback_url| string(512) | *(optional)* URL that is called on quote channel transaction updates
 success_url | string(512) | *(optional)* New URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. "20")
+share_to_keep_in_btc | string(16) | Percent of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. "20")
 
 ### Response
 
@@ -454,7 +452,7 @@ reference   | string(512) | Individual free-text field stored in the quote chann
 callback_url| string(512) | URL that is called on quote channel status updates
 txs_callback_url| string(512) | URL that is called on quote channel transaction updates
 success_url | string(512) | URL to redirect the user to after a successful payment
-share_to_keep_in_btc | string(16) | Per cent of the each transaction to be kept in BTC, as a decimal number, converted to string (e.g. "20")
+share_to_keep_in_btc | string(16) | Percent of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. "20")
 created_at  | number      | (float) Unix-epoch timestamp of the quote channel creation
 updated_at  | number      | (float) Unix-epoch timestamp when the quote channel data was last updated
 valid_until | number      | (float) Unix-epoch timestamp after which the quote will expire
