@@ -44,4 +44,3 @@ This table lists the ISO 4217 codes of currencies supported by Cubits
 |:--------:|-------------|
 |BTC | Bitcoin
 |BCH | Bitcoin Cash
-|LTC | Litecoin

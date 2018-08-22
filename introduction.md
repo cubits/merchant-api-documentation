@@ -36,4 +36,3 @@ The major version of the REST API (also visible in the request path) is reserved
 | v1.7    | 2016-11-07 | Added `buysend` APIs. Extendes channels options with `share_to_keep_in_btc` and `amount_before_fees` |
 | v1.8    | 2017-10-12 | Changed invoices defaults, added language selection section  |
 | v1.9    | 2018-06-21 | Bitcoin Cash (BCH) support, `prices` endpoint, historical balances for `accounts` endpoint |
-| v1.10   | 2018-07-31 | Litecoin (LTC) support |
