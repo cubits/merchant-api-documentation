@@ -46,4 +46,4 @@ This table lists the ISO 4217 codes of currencies supported by Cubits
 |BCH | Bitcoin Cash <span style="color:#f00">*</span>
 |LTC | Litecoin <span style="color:#f00">*</span>
 
-<span style="color:#f00">*</span> All transactions involving an exchange of BCH or LTC to a FIAT currency, and vice versa, are currently not supported (i.e. Invoices, Channels and Quotechannels are supported where only BCH or LTC is indicated as a currency in all currency fields. Buy, Buysend and Sell transactions are currently not supported for BCH and LTC)
+<span style="color:#f00">*</span> All transactions involving an exchange of BCH or LTC to a FIAT currency, and vice versa, are currently not supported (i.e. Invoices, Channels and Quotechannels are supported only when BCH or LTC is indicated as a currency in all currency fields. Buy, Buysend and Sell transactions are currently not supported for BCH and LTC).
