@@ -21,14 +21,14 @@ receiver    | object      | *Receiver* object specifying the receiving part of t
 
 Attribute   | Data type   | Description
 ------------|-------------|--------------
-currency    | string(3)   | Code of the currency that you want to spend (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
+currency    | string(3)   | Code of the currency that you want to spend (see [List of supported currencies](/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
 amount      | string(32)  | *(optional)* Amount in specified currency to be spent, decimal number as a string (e.g. "12.50")
 
 #### Receiver Object
 
 Attribute   | Data type   | Description
 ------------|-------------|--------------
-currency    | string(3)   | Code of the currency you want to receive (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
+currency    | string(3)   | Code of the currency you want to receive (see [List of supported currencies](/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
 amount      | string(32)  | *(optional)* Amount in specified currency to be received, decimal number as a string (e.g. "12.50")
 
 #### Required Attributes
@@ -61,7 +61,7 @@ amount      | string(32)   | Amount in specified currency to be received, decima
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses) and with some specific to this request:
+On error, the API responds with standard [error responses](/request_response/#error_responses) and with some specific to this request:
 
 #### Client errors (4xx)
 

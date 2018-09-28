@@ -3,7 +3,7 @@ layout: default
 permalink: /api-v1/prices/
 title: Prices
 ---
-The following endpoints provide current bid, ask and mid prices for the [supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies).
+The following endpoints provide current bid, ask and mid prices for the [supported cryptocurrencies](/appendices/#supported_cryptocurrencies).
 
 ## GET /api/v1/prices/{currency_base}
 
@@ -34,7 +34,7 @@ mid         | string(17)  | The price between the best buy and the best sell pri
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses)
+On error, the API responds with standard [error responses](/request_response/#error_responses)
 
 ### Example
 
@@ -102,7 +102,7 @@ mid         | string(17)  | The price between the best buy and the best sell pri
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses)
+On error, the API responds with standard [error responses](/request_response/#error_responses)
 
 ### Example
 

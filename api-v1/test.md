@@ -21,7 +21,7 @@ status      | string(7)   | "success"
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
+On error, the API responds with standard [error responses](/request_response/#error_responses).
 
 ### Example
 
@@ -63,7 +63,7 @@ status      | string(7)   | "success"
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
+On error, the API responds with standard [error responses](/request_response/#error_responses).
 
 ### Example
 
