@@ -31,7 +31,7 @@ balance     | string(32)  | Current balance of the account, decimal number as a 
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
+On error, the API responds with standard [error responses](/request_response/#error_responses).
 
 ### Example
 

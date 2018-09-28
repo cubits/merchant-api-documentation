@@ -22,7 +22,7 @@ reference   | string(512) | *(optional)* Individual free-text field stored in th
 
 Attribute              | Data type   | Description
 -----------------------|-------------|--------------
-currency               | string(3)   | Code of the currency that you want to spend (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies))
+currency               | string(3)   | Code of the currency that you want to spend (see [List of supported currencies](/appendices/#supported_fiat_currencies))
 amount                 | string(17)  | Amount in specified currency to be spent, decimal number as a string (e.g. "12.50")
 amount_minus_fees      | string(17)  | Amount after fees in specified currency to be spent, decimal number as a string (e.g. "12.50")
 
@@ -30,7 +30,7 @@ amount_minus_fees      | string(17)  | Amount after fees in specified currency t
 
 Attribute   | Data type   | Description
 ------------|-------------|--------------
-currency    | string(3)   | Code of the cryptocurrency that you want to spend (see [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
+currency    | string(3)   | Code of the cryptocurrency that you want to spend (see [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
 amount            | string(17)  | Amount in specified cryptocurrency to be spent, decimal number as a string (e.g. "0.01250000")
 amount_plus_fees  | string(17)  | Amount in specified cryptocurrency to be spent, without fees deducted (e.g. "0.01250000")
 
@@ -65,7 +65,7 @@ address               | string(64)  | Address where money were transferred
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses) and with some specific to this request:
+On error, the API responds with standard [error responses](/request_response/#error_responses) and with some specific to this request:
 
 #### Client errors (4xx)
 

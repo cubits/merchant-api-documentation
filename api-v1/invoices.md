@@ -72,7 +72,7 @@ default   | bool       | Whether this address is the default address format, i.e
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
+On error, the API responds with standard [error responses](/request_response/#error_responses).
 
 ### Example
 
@@ -132,9 +132,9 @@ Creates a new invoice.
 
 Attribute   | Data type   | Description
 ------------|-------------|--------------
-currency    | string(3)   | Code of the currency that you want to receive (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
+currency    | string(3)   | Code of the currency that you want to receive (see [List of supported currencies](/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
 price       | string(16)  | Price of the invoice that the merchant wants to receive, as a decimal floating point number, converted to string (e.g. "123.05")
-invoice_currency  | string(3)   | *(optional)* Code of the cryptocurrency that the customer will be requested to pay (see [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies), default: `BTC`)
+invoice_currency  | string(3)   | *(optional)* Code of the cryptocurrency that the customer will be requested to pay (see [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies), default: `BTC`)
 share_to_keep_in_btc        | number | *(optional)* Percentage of the invoice total to receive in `invoice_currency`, as an integer number from 0 to 100. If not specified, a default value is used from the Cubits Pay / Payouts / Percentage Kept in BTC
 name        | string(256) | *(optional)* Name of the item displayed to the customer
 description | string(512) | *(optional)* Description of the item displayed to the customer
@@ -189,7 +189,7 @@ default   | bool       | Whether this address is the default address format, i.e
 
 ### Errors
 
-On error API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses)
+On error API responds with standard [error responses](/request_response/#error_responses)
 and with one specific to this request:
 
 #### Client errors (4xx)
@@ -259,6 +259,6 @@ Content-Type: application/vnd.api+json
 
 ## Callbacks
 
-When specifying a `callback_url`, invoices will send callbacks to inform you about changes to any of the invoice fields. See [Callbacks](/merchant-api-documentation/callback/) for a general description of the Cubits callback mechanism and format.
+When specifying a `callback_url`, invoices will send callbacks to inform you about changes to any of the invoice fields. See [Callbacks](/callback/) for a general description of the Cubits callback mechanism and format.
 
 Usually we will send a callback within a few seconds of a crypto transaction being propagated on the network even though it is not yet confirmed. In some rare cases we might determine that the risk for a double spend attack is higher and wait until we accept a payment transaction. In those cases you will receive the callback with some delay of the actual payment.

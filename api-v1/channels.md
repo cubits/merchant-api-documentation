@@ -45,7 +45,7 @@ default   | bool       | Whether this address is the default address format, i.e
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
+On error, the API responds with standard [error responses](/request_response/#error_responses).
 
 ### Example
 
@@ -151,7 +151,7 @@ amount_plus_fees      | string(17)  | Amount that was received plus fees paid. N
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
+On error, the API responds with standard [error responses](/request_response/#error_responses).
 
 ### Example
 
@@ -275,7 +275,7 @@ amount      | string(17)  | Amount that was received. Note that this amount is p
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses).
+On error, the API responds with standard [error responses](/request_response/#error_responses).
 
 ### Example
 
@@ -320,8 +320,8 @@ Creates a new channel.
 
 Attribute   | Data type   | Description
 ------------|-------------|--------------
-sender_currency | string(3) | *(optional)* A code of the cryptocurrency that is accepted in the channel (see [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies), default: `BTC`)
-receiver_currency | string(3) | Code of the currency that you want to receive (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
+sender_currency | string(3) | *(optional)* A code of the cryptocurrency that is accepted in the channel (see [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies), default: `BTC`)
+receiver_currency | string(3) | Code of the currency that you want to receive (see [List of supported currencies](/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
 name        | string(256) | *(optional)* Name of the channel, displayed to the customer on the payment screen
 description | string(512) | *(optional)* Description of the item displayed to the customer on the payment screen
 reference   | string(512) | *(optional)* Individual free-text field stored in the channel as-is
@@ -364,7 +364,7 @@ default   | bool       | whether this address is the default address format, i.e
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses) and with one specific to this request:
+On error, the API responds with standard [error responses](/request_response/#error_responses) and with one specific to this request:
 
 #### Client errors (4xx)
 
@@ -438,7 +438,7 @@ Updates an existing channel.
 
 Attribute   | Data type   | Description
 ------------|-------------|--------------
-receiver_currency | string(3) | *(optional)* Code of the new currency that you want to receive (see [List of supported currencies](/merchant-api-documentation/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/merchant-api-documentation/appendices/#supported_cryptocurrencies))
+receiver_currency | string(3) | *(optional)* Code of the new currency that you want to receive (see [List of supported currencies](/appendices/#supported_fiat_currencies) and [List of supported cryptocurrencies](/appendices/#supported_cryptocurrencies))
 name        | string(256) | *(optional)* New name of the channel, displayed to the customer on the payment screen
 description | string(512) | *(optional)* New description of the item displayed to the customer on the payment screen
 reference   | string(512) | *(optional)* New free-text field stored in the channel as-is
@@ -478,7 +478,7 @@ default   | bool       | whether this address is the default address format, i.e
 
 ### Errors
 
-On error, the API responds with standard [error responses](/merchant-api-documentation/request_response/#error_responses) and with one specific to this request:
+On error, the API responds with standard [error responses](/request_response/#error_responses) and with one specific to this request:
 
 #### Client errors (4xx)
 
@@ -538,6 +538,6 @@ When specifying a `callback_url`, the server will send callbacks to inform you a
 
 When specifying a `txs_callback_url`, the server will send callbacks to inform you about changes to any of the channel's transactions. The POSTed request body will correspond to the result of a GET request to /api/v1/channels/{channel_id}/txs/{tx_ref_code}.
 
-See [Callbacks](/merchant-api-documentation/callback/) for a general description of the Cubits callback mechanism and format.
+See [Callbacks](/callback/) for a general description of the Cubits callback mechanism and format.
 
 Usually we will send a callback within a few seconds of a transaction being propagated on the blockchain even though it is not yet confirmed and you will see those transactions as `pending`.
