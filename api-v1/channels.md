@@ -329,6 +329,7 @@ callback_url| string(512) | *(optional)* URL that is called on channel status up
 txs_callback_url| string(512) | *(optional)* URL that is called on channel transaction updates
 success_url | string(512) | *(optional)* URL to redirect the user to after a successful payment
 share_to_keep_in_btc | string(16) | *(optional)* Percentage of the each transaction to receive in `sender_currency`, as a decimal number, converted to string (e.g. `20`).
+refund_address | string(512) | *(optional)* Crypto address which will be used for automatic refunds, when feature is enabled for an account. 
 
 Note that conversion between cryptocurrencies aren't supported yet, meaning if `receiver_currency` is set to `BCH`, `sender_currency` **must** also be explicitly set to `BCH`.
 
